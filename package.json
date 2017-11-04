@@ -1,0 +1,24 @@
+{
+  "name": "homeworkmanager-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "firebase-admin": "^5.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeNightAmViertenNovember/homeworkManager-Web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeNightAmViertenNovember/homeworkManager-Web/issues"
+  },
+  "homepage": "https://github.com/CodeNightAmViertenNovember/homeworkManager-Web#readme"
+}

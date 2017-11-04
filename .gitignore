@@ -13,3 +13,4 @@ gulp.1
 config.codekit
 .sass-cache
 assets/sourcemaps
+firebase_key.json
