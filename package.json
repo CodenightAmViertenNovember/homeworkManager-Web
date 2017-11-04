@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "firebase-admin": "^5.4.3"
+    "firebase-admin": "^5.4.3",
+    "http": "0.0.0",
+    "ws": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
