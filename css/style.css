@@ -1,5 +1,5 @@
 /* FONT */
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,600';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700');
 
 /* MAIN */
 
@@ -78,7 +78,92 @@ a {
 	color: white; 
 }
 
+/*.Nav */
 
+.nav {
+	width: calc(100% - 40px);
+	padding: 20px;
+	background-color: #e74c3c;
+	color: white;
+}
+
+	.nav .logo {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 26px;
+		font-weight: 700;
+		display: inline-block;
+	}
+
+	.nav .menu {
+		display: inline-block;
+		float: right;
+	}
+
+		.nav .menu a {
+			color: white;
+			font-size: 14px;
+			line-height: 26px;
+		}
+
+/*.HOMEWORK WRAPPER */
+
+.homeworkWrapper {
+	width: 90%;
+	margin: 40px auto;
+	height: auto;
+}
+
+	.homeworkWrapper .homeworkList {
+		display: inline-block;
+		background: white;
+		box-shadow: 0px 2px 3px #bbb;
+		width: 100%;
+	}
+
+		.homeworkWrapper .homeworkList .homeworkElement {
+			width: calc(100% - 20px);
+			padding: 10px;
+			display: inline-block;
+			position: relative;
+		}
+
+			.homeworkWrapper .homeworkList .homeworkElement .subjectSymbol {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				background: #ccc;
+				position: relative;
+				display: inline-block;
+				float: left;
+				margin-right: 20px;
+			}
+
+			.homeworkWrapper .homeworkList .homeworkElement .subjectSymbol p {
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 100%;
+				text-align: center;
+				color: white;
+				font-family: 'Montserrat', sans-serif;
+				font-size: 22px;
+				font-weight: 700;
+			}
+
+		.homeworkWrapper .homeworkList .homeworkTitle {
+			display: inline-block;
+			float: left;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.homeworkWrapper .homeworkList .bottomBorder {
+			width: 100%;
+			margin: 0 auto;
+			border-bottom: 1px solid #ddd;
+		}
 
 
 
