@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Homework Manager &raquo; Login</title>
+
+		<!-- CSS -->
+	    <link href="css/reset.css" rel="stylesheet">
+	    <link href="css/style.css" rel="stylesheet">
+	    <link href="css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="wrapper">
+			
+			<div class="content">
+				<div class="form">
+					<input type="text" placeholder="Name" id="userName"/><br>
+					<input type="password" placeholder="Password" id="userPassword"/><br>
+					<button id="loginSubmit" onclick="">Submit</button>
+				</div>
+				<div class="notification">
+					<p id="notificationMessage">This is a negative notification</p>
+				</div>
+				<a href="https://github.com/CodenightAmViertenNovember" target="_blank">CodenightAmViertenNovember</a>
+			</div>
+
+		</div>
+
+		<!-- jQuery -->
+	    <script src="js/jquery.min.js"></script>
+	    <!-- JS -->
+	    <script type="text/javascript">
+	    	
+	    	$notification = $('.notification');
+
+	    	function showError(message, interval){
+	    		$notification.hide();
+	    		$('.notification').html(message);
+		    	$notification.slideDown(400);
+		    	setTimeout(function(){ 
+		    		$notification.slideUp(400);
+		    	}, interval);
+	    	}
+
+	    </script>
+	    <!-- <script type="text/javascript" src="server.js"></script> -->
+	    <script type="text/javascript" src="app.js"></script>
+	</body>
+</html>

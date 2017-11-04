@@ -8,5 +8,3 @@ admin.initializeApp({
 });
 
 var db = admin.database();
-
-
