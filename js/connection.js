@@ -36,15 +36,15 @@ connection.onmessage = function(message) {
 			}
 		} else if (json.type === 'homework') {
 
-			console.log('test');
-			json.forEach(function(item, index) {
+			console.log('test', json.homework);
+			json.homework.forEach(function(item, index) {
 				$homeworkList = $('.homeworkList');
 				if(index != 0) {
 					$homeworkList.append('<div class="bottomBorder"></div>');
 				}
 
 				let tempDate = new Date(item.date);
-				let date = tempDate.getDate() + ' / ' + (tempDate.getMonth() + 1) + ' / ' + getFullYear();
+				let date = tempDate.getDate() + ' / ' + (tempDate.getMonth() + 1) + ' / ' + tempDate.getFullYear();
 
 				$homeworkList.append('<div class="homeworkElement">');
 				$homeworkList.append('<div class="subjectSymbol">');

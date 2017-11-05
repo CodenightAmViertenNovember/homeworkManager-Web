@@ -15,25 +15,25 @@ function loadHomeworkView(){
 	let role = parseInt(localStorage.getItem("currentUserRole"));
 
 	console.log(role);
-	
+
 	switch(role) {
-	    case 0:
-	        window.location.href = 'index.html';
-	        break;
-	    case 1:
-	        console.log('student');
-	        connection.send(JSON.stringify({type: 'homework', sid: sid}));
-	        break;
-	    case 2:
-	        $('.teacherOption').show();
-	        connection.send(JSON.stringify({type: 'homework', sid: sid}));
-	        connection.send(JSON.stringify({type: 'get_classes', sid: sid}));
-	        break;
-	    case 3:
-	        window.location.href = 'adminView.html';
-	        break;
-	    default:
-	        console.log('error');
+		case 0:
+			window.location.href = 'index.html';
+			break;
+		case 1:
+			console.log('student');
+			connection.send(JSON.stringify({type: 'homework', sid: sid}));
+			break;
+		case 2:
+			$('.teacherOption').show();
+			connection.send(JSON.stringify({type: 'homework', sid: sid}));
+			connection.send(JSON.stringify({type: 'get_classes', sid: sid}));
+			break;
+		case 3:
+			window.location.href = 'adminView.html';
+			break;
+		default:
+			console.log('error');
 	}
 }
 

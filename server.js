@@ -31,18 +31,63 @@ function checkLogin(username, password, callback) {
 		callback(false, null, 0);
 	});
 }
-function getHomework(className, callback) {
-	db.ref('head/classes/' + className).once('value', (snapshot) => {
-		var value = snapshot.val(), k, list = [];
-		if (value.homework) {
-			for (k in value.homework) list.push(value.homework[k]);
+function getHomework(userId, callback) {
+	db.ref('head/users/' + userId).once('value', (snapshot) => {
+		console.log(userId);
+		var userInfo = snapshot.val(), homework = [];
+		console.log(userInfo.classList);
+		if (userInfo.classList) {
+			userInfo.classList.forEach((element) => {
+				db.ref('head/classes/' + element + '/homework').once('value', (h_snapshot) => {
+					var homeworkInfo = h_snapshot.val(), k;
+					for (k in homeworkInfo) homework.push(homeworkInfo[k]);
+					callback(homework);
+				}, (err) => {
+					callback([]);
+				});
+			});
 		}
-		callback(list);
 	}, (err) => {
 		callback([]);
 	});
 }
+function getClasses(userId, callback) {
+	db.ref('head/users/' + userId).once('value', (snapshot) => {
+		var userInfo = snapshot.val(), classes = [];
+		if (userInfo.classList) {
+			userInfo.classList.forEach((element) => {
+				db.ref('head/classes/' + element).once('value', (c_snapshot) => {
+					var classInfo = c_snapshot.val();
+					classes.push({id: classInfo.id, name: classInfo.name});
+					if (classes.length === userInfo.classList.length) callback(classes);
+				}, (err) => {
+					callback([]);
+				});
+			});
+		}
+	}, (err) => {
+		callback([]);
+	});
+}
+function newHomework(classId, subject, date, content, callback) {
+	db.ref('head/classes/' + classId).once('value', (snapshot) => {
+		var value = snapshot.val();
+		var counter = value.homework_counter + 1;
+		console.log(counter);
+		db.ref('/head/classes/' + classId + '/homework_counter').set(counter);
+		db.ref('/head/classes/' + classId + '/homework/' + counter).set({
+			subject: subject,
+			duedate: date,
+			content: content
+		});
+	});
+}
 
+newHomework(1, 'Bio', '17-8-2017', 'test', () => {});
+
+getHomework('user2', (list) => {
+	console.log(list);
+});
 
 var sessionIds = [];
 wss.on('connection', (ws, req) => {
@@ -105,16 +150,22 @@ wss.on('connection', (ws, req) => {
 					// respond to client requests
 					switch (json.type) {
 						case 'homework':
-							if (sessionObj.role) {
-								// authorized user
-								getHomework(json.classId, (list) => {
-									// send homework
-									ws.send(JSON.stringify({
-										type: 'homework',
-										homework: list
-									}));
-								});
-							}
+							getHomework(sessionObj.uid, (list) => {
+								// send oiomework
+								ws.send(JSON.stringify({
+									type: 'homework',
+									homework: list
+								}));
+							});
+							break;
+						case 'get_classes':
+							getClasses(sessionObj.uid, (list) => {
+								// send classes
+								ws.send(JSON.stringify({
+									type: 'get_classes',
+									classes: list
+								}));
+							});
 							break;
 					}
 				} else {

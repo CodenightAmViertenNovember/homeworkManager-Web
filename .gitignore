@@ -14,3 +14,4 @@ config.codekit
 .sass-cache
 assets/sourcemaps
 firebase_key.json
+package-lock.json
