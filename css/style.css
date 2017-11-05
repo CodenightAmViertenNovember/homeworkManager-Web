@@ -87,6 +87,12 @@ a {
 	color: white;
 }
 
+	.navWrap {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1000px;
+	}
+
 	.nav .logo {
 		font-family: 'Montserrat', sans-serif;
 		font-size: 26px;
@@ -109,8 +115,9 @@ a {
 
 .homeworkWrapper {
 	width: 90%;
-	margin: 40px auto;
+	margin: 35px auto;
 	height: auto;
+	max-width: 1000px;
 }
 
 	.homeworkWrapper .homeworkList {
@@ -151,19 +158,149 @@ a {
 				font-weight: 700;
 			}
 
-		.homeworkWrapper .homeworkList .homeworkTitle {
-			display: inline-block;
-			float: left;
+		.homeworkWrapper .homeworkList .homeworkWrap {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
+			display: inline-block;
 		}
 
-		.homeworkWrapper .homeworkList .bottomBorder {
-			width: 100%;
-			margin: 0 auto;
-			border-bottom: 1px solid #ddd;
+			.homeworkWrapper .homeworkList .homeworkWrap .homeworkTitle {
+				display: inline-block;
+				float: left;
+				margin-bottom: 5px;
+			}
+
+			.homeworkWrapper .homeworkList .homeworkWrap .dueDate {
+				display: inline-block;
+				float: left;
+				font-size: 12px;
+				color: #555;
+				font-weight: 300;
+			}
+
+			.homeworkWrapper .homeworkList .homeworkWrap .bottomBorder {
+				width: 100%;
+				margin: 0 auto;
+				border-bottom: 1px solid #ddd;
+			}
+
+	.homeworkWrapper .teacherOption {
+		background: #ccc;
+		box-shadow: 0px 2px 3px #bbb;
+		box-shadow-bottom: none;
+		width: calc(100% - 40px);
+		margin: 0 auto;
+		padding: 15px;
+		/*display: none;*/
+	}
+
+		.homeworkWrapper .teacherOption p {
+			color: #fff;
+			font-weight: 300;
+			display: inline-block;
 		}
+
+		.homeworkWrapper .teacherOption button {
+			border: 0px;
+			background: rgba(0,0,0,0);
+			display: inline-block;
+			float: right;
+			color: #fff;
+			font-size: 16px;
+			text-align: right;
+			line-height: 14px;
+			padding: 0;
+		}
+
+		.homeworkWrapper .teacherOption button:hover {
+			cursor: pointer;
+			text-shadow: 0px 2px 7px #bbb;
+		}
+
+	.homeworkWrapper .teacherOptionToggled {
+		background: #ccc;
+		box-shadow: 0px 2px 3px #bbb;
+		box-shadow-bottom: none;
+		box-shadow-top: none;
+		width: calc(100% - 40px);
+		margin: 0 auto;
+		padding: 0 15px 15px 15px;
+		display: none;
+	}
+
+		.homeworkWrapper .teacherOptionToggled select{
+			background: rgba(0,0,0,0);
+			border: 0px;
+			border-bottom: 1px solid #bbb;
+			padding: 10px 0;
+			width: calc(100% + 5px);
+			margin: 10px 0;
+			margin-left: -5px;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		.homeworkWrapper .teacherOptionToggled input{
+			background: rgba(0,0,0,0);
+			border: 0px;
+			border-bottom: 1px solid #bbb;
+			padding: 10px 0;
+			width: 100%;
+			margin: 0 auto 10px auto;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+		}
+
+		.homeworkWrapper .teacherOptionToggled ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #fff;
+		}
+		.homeworkWrapper .teacherOptionToggled :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #fff;
+		   opacity:  1;
+		}
+		.homeworkWrapper .teacherOptionToggled ::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #fff;
+		   opacity:  1;
+		}
+		.homeworkWrapper .teacherOptionToggled :-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #fff;
+		}
+		.homeworkWrapper .teacherOptionToggled ::-ms-input-placeholder { /* Microsoft Edge */
+		   color:    #fff;
+		}
+
+		.homeworkWrapper .teacherOptionToggled textarea{
+			background: rgba(0,0,0,0);
+			border: 0px;
+			border-bottom: 1px solid #bbb;
+			padding: 10px 0;
+			width: 100%;
+			margin: 0 auto 10px auto;
+			color: white;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+			resize: vertical;
+			min-height: 80px;
+			max-height: 200px;
+		}
+
+		.homeworkWrapper .teacherOptionToggled ::-webkit-textarea-placeholder { /* WebKit, Blink, Edge */
+		    color:    #fff;
+		}
+		.homeworkWrapper .teacherOptionToggled :-ms-textarea-placeholder { /* Internet Explorer 10-11 */
+		   color:    #fff;
+		}
+		.homeworkWrapper .teacherOptionToggled ::-ms-textarea-placeholder { /* Microsoft Edge */
+		   color:    #fff;
+		}
+
+		.homeworkWrapper .teacherOptionToggled button{
+
+		}
+
 
 
 

@@ -16,27 +16,39 @@
 		<div class="wrapper">
 			
 			<div class="nav">
-				<h1 class="logo">Homework Manager</h1>
-				<div class="menu">
-					<a href="javascript:logout()">Logout</a>
+				<div class="navWrap">
+					<h1 class="logo">Homework Manager</h1>
+					<div class="menu">
+						<a href="javascript:logout()">Logout</a>
+					</div>
 				</div>
 			</div>
 
 			<div class="homeworkWrapper">
+				<div class="teacherOption">
+					<p>Neue Hausaufgaben hinzufügen</p>
+					<button onClick="toggleHomeworkMenu()" class="addHomework">+</button>
+				</div>
+				<div class="teacherOptionToggled">
+					<select id="classSelect">
+						<option>Klasse</option>
+					</select>
+					<input type="text" placeholder="Fach" id="homeworkSubject"/>
+					<input type="date" placeholder="Abgabetermin" id="homeworkDuedate"/>
+					<textarea placeholder="Hausaufgaben" id="homeworkContent"/></textarea>
+					<button>Submit</button>
+				</div>
 				<div class="homeworkList">
 					<div class="homeworkElement">
 						<div class="subjectSymbol">
 							<p>MA</p>
 						</div>
-						<div class="homeworkTitle">Aufgaben auf Seite 45 und 46</div>
+						<div class="homeworkWrap">
+							<div class="homeworkTitle">Aufgaben auf Seite 45 und 46</div><br>
+							<div class="dueDate">Bis: 05 / 12 / 2017</div>
+						</div>
 					</div>
 					<div class="bottomBorder"></div>
-					<div class="homeworkElement">
-						<div class="subjectSymbol">
-							<p>PH</p>
-						</div>
-						<div class="homeworkTitle">Finde heraus ob dieses Fach Physik ist oder Phylosophie ;)</div>
-					</div>
 				</div>
 			</div>
 
@@ -45,7 +57,24 @@
 		<!-- jQuery -->
 	    <script src="js/jquery.min.js"></script>
 	    <!-- JS -->
-	    <!-- <script type="text/javascript" src="server.js"></script> -->
-	    <script type="text/javascript" src="app.js"></script>
+	    <script type="text/javascript" src="js/connection.js"></script>
+	    <script type="text/javascript" src="js/app.js"></script>
+	    <script>
+	    	// loadHomeworkView();
+
+	    	let toggle = false;
+
+	    	function toggleHomeworkMenu(){
+	    		if(toggle == false) {
+	    			$('.addHomework').html('–');
+	    			$('.teacherOptionToggled').slideDown(400);
+	    			toggle = true;
+	    		} else {
+	    			$('.addHomework').html('+');
+	    			$('.teacherOptionToggled').slideUp(400);
+	    			toggle = false;
+	    		}
+	    	}
+	    </script>
 	</body>
 </html>

@@ -7,6 +7,7 @@
     "firebase-admin": "^5.4.3",
     "generate-safe-id": "^1.0.2",
     "http": "0.0.0",
+    "nodemon": "^1.12.1",
     "ws": "^3.3.0"
   },
   "devDependencies": {},

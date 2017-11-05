@@ -71,6 +71,7 @@ wss.on('connection', (ws, req) => {
 					}
 					ws.send(JSON.stringify({
 						type: 'login',
+						sid: sessionObj.sid,
 						role: role
 					}));
 				});
