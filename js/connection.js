@@ -51,7 +51,7 @@ connection.onmessage = function(message) {
 				$homeworkElement.append('<div class="subjectSymbol" id="subjectSymbol' + index +'"></div>');
 				$('#subjectSymbol' + index).append('<p>' + item.subject.slice(0,2).toUpperCase() + '</p>');
 				$homeworkElement.append('<div class="homeworkWrap" id="homeworkWrap' + index +'"></div');
-				$('#homeworkWrap' + index).append('<div class="homeworkTitle">' + item.content + '</div>');
+				$('#homeworkWrap' + index).append('<div class="homeworkTitle">' + item.content + '</div><br/>');
 				$('#homeworkWrap' + index).append('<div class="dueDate">Bis:' + date + '</div>');
 
 				console.log('go');

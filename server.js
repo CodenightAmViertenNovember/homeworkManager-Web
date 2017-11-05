@@ -83,12 +83,6 @@ function newHomework(classId, subject, date, content, callback) {
 	});
 }
 
-newHomework(1, 'Bio', '17-8-2017', 'test', () => {});
-
-getHomework('user2', (list) => {
-	console.log(list);
-});
-
 var sessionIds = [];
 wss.on('connection', (ws, req) => {
 	// keep a session object as reference
@@ -126,7 +120,6 @@ wss.on('connection', (ws, req) => {
 					console.log(json.sid);
 					var i = sessionIds.length;
 					while (i-- != 0) {
-						console.log(i, sessionIds[i]);
 						if (sessionIds[i].sid === json.sid) break;
 					}
 					if (i < 0) {
