@@ -36,6 +36,7 @@ connection.onmessage = function(message) {
 			}
 		} else if (json.type === 'homework') {
 
+			console.log('test');
 			json.forEach(function(item, index) {
 				$homeworkList = $('.homeworkList');
 				if(index != 0) {
@@ -61,6 +62,7 @@ connection.onmessage = function(message) {
 				$('#classSelect').append('<option id="class' + item.id + '">' + item.name + '</option>');
 			});
 		} else if (json.type == 'sid_gone') {
+			let sid = localStorage.getItem("currentUserSid");
 			connection.send(JSON.stringify({type: 'logout', sid: sid}));
 			window.location.href = 'index.html';
 		}

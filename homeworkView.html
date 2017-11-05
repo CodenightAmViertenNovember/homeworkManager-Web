@@ -60,7 +60,8 @@
 	    <script type="text/javascript" src="js/connection.js"></script>
 	    <script type="text/javascript" src="js/app.js"></script>
 	    <script>
-	    	// loadHomeworkView();
+
+	    	connection.onopen = loadHomeworkView;
 
 	    	let toggle = false;
 
