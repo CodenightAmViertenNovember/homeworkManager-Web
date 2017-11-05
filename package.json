@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "firebase-admin": "^5.4.3",
+    "generate-safe-id": "^1.0.2",
     "http": "0.0.0",
     "ws": "^3.3.0"
   },

@@ -24,8 +24,8 @@ connection.onmessage = function(message) {
 	try {
 		var json = JSON.parse(message.data);
 		console.log('received json:', json);
-		if(json.type === 'login') {
-			if(json.successful) {
+		if (json.type === 'login') {
+			if (json.role) {
 				window.location.href = 'homeworkView.html';
 			} else {
 				showError('This is an invalid login. Try again.', 4000);
