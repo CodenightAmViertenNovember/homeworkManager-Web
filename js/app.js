@@ -38,6 +38,7 @@ function loadHomeworkView(){
 }
 
 function logout(){
+	let sid = localStorage.getItem("currentUserSid");
 	connection.send(JSON.stringify({type: 'logout', sid: sid}));
 	window.location.href = 'index.html';
 }

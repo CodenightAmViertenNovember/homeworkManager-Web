@@ -46,15 +46,15 @@ connection.onmessage = function(message) {
 				let tempDate = new Date(item.date);
 				let date = tempDate.getDate() + ' / ' + (tempDate.getMonth() + 1) + ' / ' + tempDate.getFullYear();
 
-				$homeworkList.append('<div class="homeworkElement">');
-				$homeworkList.append('<div class="subjectSymbol">');
-				$homeworkList.append('<p class="subjectSymbol">' + item.subject.slice(0,2).toUpperCase() + '</p>');
-				$homeworkList.append('</div>');
-				$homeworkList.append('<div class="homeworkWrap">');
-				$homeworkList.append('<div class="homeworkTitle">' + item.content + '</div>');
-				$homeworkList.append('<div class="dueDate">' + date + '</div>');
-				$homeworkList.append('</div>');
-				$homeworkList.append('</div>');
+				$homeworkList.append('<div class="homeworkElement" id="homeworkElement' + index +'"></div>');
+				$homeworkElement = $('#homeworkElement' + index);
+				$homeworkElement.append('<div class="subjectSymbol" id="subjectSymbol' + index +'"></div>');
+				$('#subjectSymbol' + index).append('<p>' + item.subject.slice(0,2).toUpperCase() + '</p>');
+				$homeworkElement.append('<div class="homeworkWrap" id="homeworkWrap' + index +'"></div');
+				$('#homeworkWrap' + index).append('<div class="homeworkTitle">' + item.content + '</div>');
+				$('#homeworkWrap' + index).append('<div class="dueDate">Bis:' + date + '</div>');
+
+				console.log('go');
 			});
 
 		} else if (json.type == 'get_classes') {
@@ -70,13 +70,4 @@ connection.onmessage = function(message) {
 		console.log('error when parsing json', e);
 	}
 };
-
-function sendUserLogin(username, password) {
-	connection.send(JSON.stringify({type: 'login', username: username, password: password}));
-}
-
-function requestHomeworkView(){
-	// let currentUser = localStorage.getItem("currentUser");
-}
-
 
